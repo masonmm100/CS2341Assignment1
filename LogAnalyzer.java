@@ -61,7 +61,7 @@ public class LogAnalyzer {
 
     public static void main(String[] args) {
         LogAnalyzer analyzer = new LogAnalyzer();
-        analyzer.readLogFile("path/to/your/logfile.log");
+        analyzer.readLogFile("log-data.csv");
         analyzer.processLogs();
         analyzer.printAnalysis();
     }

@@ -27,7 +27,7 @@ public class LogAnalyzer {
     public void processLogs() {
         while (!logQueue.isEmpty()) {
             String logEntry = logQueue.poll();
-            
+
             if (logEntry.contains("INFO")) {
                 infoCount++;
             } else if (logEntry.contains("WARN")) {
@@ -50,9 +50,9 @@ public class LogAnalyzer {
         System.out.println("INFO: " + infoCount);
         System.out.println("WARN: " + warnCount);
         System.out.println("ERROR: " + errorCount);
-        
+
         System.out.println("\nMemory Warnings: " + memoryWarningCount);
-        
+
         System.out.println("\nLast 100 Errors:");
         for (int i = errorStack.size() - 1; i >= Math.max(0, errorStack.size() - 100); i--) {
             System.out.println(errorStack.get(i));
@@ -61,7 +61,7 @@ public class LogAnalyzer {
 
     public static void main(String[] args) {
         LogAnalyzer analyzer = new LogAnalyzer();
-        analyzer.readLogFile("log-data.csv");
+        analyzer.readLogFile("C:\\Users\\atomi\\IdeaProjects\\one\\src\\log-data.csv");
         analyzer.processLogs();
         analyzer.printAnalysis();
     }
